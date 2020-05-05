@@ -161,7 +161,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
             return;
         }
 
-        permissionsCheck(activity, promise, Collections.emptyList(), new Callable<Void>() {
+        permissionsCheck(activity, promise, new ArrayList<String>(), new Callable<Void>() {
             @Override
             public Void call() {
                 try {
@@ -195,7 +195,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
             return;
         }
 
-        permissionsCheck(activity, promise, Collections.emptyList(), new Callable<Void>() {
+        permissionsCheck(activity, promise, new ArrayList<String>(), new Callable<Void>() {
             @Override
             public Void call() throws Exception {
                 try {
@@ -375,7 +375,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
         setConfiguration(options);
         resultCollector.setup(promise, multiple);
 
-        permissionsCheck(activity, promise, Collections.emptyList(), new Callable<Void>() {
+        permissionsCheck(activity, promise, new ArrayList<String>(), new Callable<Void>() {
             @Override
             public Void call() {
                 initiatePicker(activity);
@@ -397,7 +397,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
         resultCollector.setup(promise, false);
 
         final Uri uri = Uri.parse(options.getString("path"));
-        permissionsCheck(activity, promise, Collections.emptyList(), new Callable<Void>() {
+        permissionsCheck(activity, promise, new ArrayList<String>(), new Callable<Void>() {
             @Override
             public Void call() {
                 startCropping(activity, uri);
